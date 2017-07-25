@@ -1,0 +1,22 @@
+{
+  "name": "game_leaderboard",
+  "version": "1.0.0",
+  "description": "game leaderboard api and front end written with coffeescript",
+  "main": "index.coffee",
+  "scripts": {
+    "start": "coffee index.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaxPleaner/leaderboard.git"
+  },
+  "author": "max pleaner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaxPleaner/leaderboard/issues"
+  },
+  "homepage": "https://github.com/MaxPleaner/leaderboard#readme",
+  "dependencies": {
+    "coffeescript": "^2.0.0-beta3"
+  }
+}

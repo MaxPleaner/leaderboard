@@ -11,6 +11,8 @@ express = require('express')
 app = express()
 router = express.Router()
 port = process.env.PORT || 3000
+env = require('node-env-file')
+env(__dirname + "/.env")
 
 # -----------------------------------------------------------------------------
 # Configuration

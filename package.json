@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/MaxPleaner/leaderboard#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "coffeescript": "^2.0.0-beta3",
     "express": "^4.15.3"
   }

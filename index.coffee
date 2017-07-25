@@ -1,15 +1,40 @@
 # =============================================================================
-# The server
+# Server
 # =============================================================================
 
-express = require 'express'
+# -----------------------------------------------------------------------------
+# Dependencies
+# -----------------------------------------------------------------------------
 
-start_server = (routes_fn) ->
-  port = process.env.PORT || 3000
-  app = express()
-  routes_fn.apply app, [app]
-  app.listen port, -> console.log("Listening on port #{port}")
+body_parser = require "body-parser"
+express = require('express')
+app = express()
+router = express.Router()
+port = process.env.PORT || 3000
 
-start_server ->
-  @get '/', (req, res) ->
-    res.send "hello"
+# -----------------------------------------------------------------------------
+# Configuration
+# -----------------------------------------------------------------------------
+
+(->
+  @use body_parser.urlencoded extended: true
+  @use body_parser.json()
+  @use '/', router
+).apply app
+
+# -----------------------------------------------------------------------------
+# Routes
+# -----------------------------------------------------------------------------
+
+(->
+  @post '/score', (req, res) ->
+    res.json {foo: "bar"}
+).apply router
+
+# -----------------------------------------------------------------------------
+# Initialization
+# -----------------------------------------------------------------------------
+
+(->
+  @listen port, -> console.log("Listening on port #{port}")
+).apply app

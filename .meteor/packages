@@ -23,3 +23,5 @@ accounts-ui
 accounts-password
 aldeed:collection2-core
 aldeed:autoform
+aslagle:reactive-table
+twbs:bootstrap

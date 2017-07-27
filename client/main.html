@@ -3,6 +3,8 @@
 </head>
 
 <body>
+  <a href='http://github.com/maxpleaner/leaderboard'>source code</a>
+  <br>
   {{> loginButtons}}
   <br>
   {{# if currentUser }}
@@ -23,9 +25,8 @@
 </template>
 
 <template name="scoresList">
-  {{#each scores }}
-    <li>{{score}}</li>
-  {{/each }}
+  {{> reactiveTable collection=scores}}
+
 </template>
 
 <template name="errors">

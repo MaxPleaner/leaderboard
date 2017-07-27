@@ -3,23 +3,31 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
-  {{> info}}
+  {{> loginButtons}}
+  <br>
+  {{# if currentUser }}
+    {{> leaderboard}}
+  {{ else }}
+    <b>log in to access leaderboard</b>
+  {{/ if }}
+  {{> errors }}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="leaderboard">
+  {{> scoresList }}
+  {{> insertScoreForm }}
 </template>
 
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
-  </ul>
+<template name="insertScoreForm">
+  {{> quickForm collection="Scores" id="insertScoreForm" type="insert"}}
+</template>
+
+<template name="scoresList">
+  {{#each scores }}
+    <li>{{score}}</li>
+  {{/each }}
+</template>
+
+<template name="errors">
+  <ul id='errors'></ul>
 </template>

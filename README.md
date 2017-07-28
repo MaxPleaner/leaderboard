@@ -19,7 +19,7 @@ This is a meteor application written with coffeescript.
    and `id` (user id). There is also a POST /users/login route with the same
    request/response format.
 2. get a listing of scores using GET /publications/scores
-3. use GET /publications/scores/by_user/<user id> to get scores of a single user
-4. use GET /publications/scores/by_game/<game name> to get scores of a single game
+3. use GET /publications/scores/by_user/`<user_id>` to get scores of a single user
+4. use GET /publications/scores/by_game/`<game_name>` to get scores of a single game
 3. add a score listing using POST /methods/add_score with params `user_id`,
    `game_name`, and `score`.
